@@ -20,7 +20,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <ConvexClientProvider>
           {children}
-        </ConvexClientProvider></body>
+        </ConvexClientProvider>
+      </body>
     </html>
   );
 }

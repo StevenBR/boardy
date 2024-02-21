@@ -10,6 +10,8 @@ import {
 } from "convex/react"
 import { ReactNode } from "react"
 
+import { Loading } from '@/components/auth/loading';
+
 // custom way to provide authentication for the whole app, works similar to a layout. but is providing the convex/clerk functionality
 interface ConvexClientProviderProps {
   children: ReactNode
@@ -24,7 +26,14 @@ export const ConvexClientProvider = ({
 }: ConvexClientProviderProps) => {
   return (
     <ClerkProvider>
-      <ConvexProviderWithClerk useAuth={useAuth} client={convex}>{children}</ConvexProviderWithClerk>
+      <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
+        <Authenticated>
+          {children}
+        </Authenticated>
+        <AuthLoading>
+          <Loading />
+        </AuthLoading>
+      </ConvexProviderWithClerk>
     </ClerkProvider>
   )
 }
