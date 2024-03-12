@@ -20,7 +20,9 @@ const DashboardPage = ({
 
   return (
     <div className="flex-1 h-[calc(100%-80px)] p-6">
-      {JSON.stringify(searchParams)}
+
+      {/* this just prints out what is in the search params */}
+      {/* {JSON.stringify(searchParams)} */}
       {!organization ? (
         <EmptyOrg />
       ) : (
